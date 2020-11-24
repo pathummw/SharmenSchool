@@ -1,6 +1,10 @@
+var header = document.querySelector("header");
+
 window.addEventListener("scroll",function(){
-    var header = document.querySelector("header");
-    header.classList.toggle("sticky",window.scrollY > 15);
-    console.log(window.scrollY);
+    
+    header.classList.toggle("sticky",window.scrollY > 0);
 })
 
+window.onload = (event) => {
+    header.classList.toggle("sticky",window.scrollY > 0);
+  };
