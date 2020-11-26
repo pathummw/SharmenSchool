@@ -25,7 +25,7 @@ header{
 header.sticky{
     height: 6em;
     padding-top: 0.5em;
-    background-color: rgba(245, 245, 245, 0.938);
+    background-color: rgba(20, 20, 20, 0.938);
 }
 h1{
     padding: 20px 0;
@@ -34,9 +34,7 @@ nav{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
-    
-    
+    align-items: stretch;
 }
 li > a{
     text-decoration: none;
@@ -49,6 +47,7 @@ li > a{
     background-color: #0f0f0f;
     letter-spacing: 1px;
     margin: 0 20px;
+    box-shadow: 0 0px 25px 2px rgba(238, 235, 235, 0.2);
 }
 li > a:hover{
     color:  #0f0f0f;
@@ -79,7 +78,7 @@ ul{
 .aboutSchool{
     display: flex;
     /* background-color: whitesmoke; */
-    height: 80vh;  /* TEST */
+    /* height: 80vh;  */ /* TEST */
 }
 .aboutSchool .leftArticle{
     flex: 1;
@@ -104,10 +103,13 @@ ul{
 }
 
 .kontakt{
+    display: flex;
     text-align: center;
     padding-top: 30vh;
     background-color:  #0f0f0f;
-    height: 100vh;
+    height: 100vh;  /* //TEST */
+    justify-content: center;
+    align-items: center;
 }
 .kontakt a{
     text-decoration: none;
@@ -180,3 +182,279 @@ footer p{
     padding: 2em 0;
     font-weight: 300;
 }
+#hamburger{
+    display: none;
+}
+@media screen and (max-width: 780px){
+
+    .aboutSchool{
+        flex-direction: column;
+    }
+
+    #hamburger{
+        display:inline;
+    }
+    #navbar{
+        display: none;
+    }
+
+    header{
+        /* height: 50vh; */
+        background-color: rgba(43, 41, 41, 0);
+        position: fixed;
+    }
+
+/*     #hem, #behandlingar, #omMig{
+        overflow-x: hidden;
+    }
+
+    ul > li{
+        width: 100%;
+        align-items: center; 
+    }
+    nav{
+        position: absolute; 
+    }
+
+    .flexContainerHeroSection{
+        flex-direction: column-reverse;
+    }
+    li > a{
+        width: 100vw;
+        text-align: center;
+        border-radius: 0;
+        margin: 0 0 0 -4vw;
+        padding: 0.5em 0;
+        background-color: rgba(24, 23, 23, 0.493);
+        color: mistyrose;
+
+    }
+    .flexContainerHeroSection .right-half{
+        background-color: rgba(139, 139, 139, 0.041);
+    }
+    
+    .flexContainerHeroSection .right-half img{
+        margin-top: 0;
+    }
+    .flexContainerHeroSection .left-half{
+        margin-top: -30vh;
+    }
+    .flexContainerHeroSection{
+        flex-direction: column-reverse;
+    }
+    .flexContainerHeroSection .left-half p{
+        font-size: 4vw;
+    }
+
+    .flexContainerHeroSection .right-half .backgroundShape2{
+        width: 90%;
+        height: 60%;
+    }
+
+    section > h1{
+        font-size: 10vw;
+    }
+    .flexContainerHeroSection h1{
+        font-size: 15vw;
+    }
+    .flexContainerHeroSection h2{
+        text-align: left;
+    }
+
+    h2{
+        font-size: 10vw;
+        text-align: center;
+    }
+    h3{
+        font-size: 7vw;
+    }
+    h4{
+        font-size: 5vw;
+    }
+    p{
+        color: rgb(78, 78, 78);
+        font-size: 5vw;
+    }
+    
+
+    .flexOmMig{
+        flex-direction: column-reverse;
+    }
+
+  
+    .flexOmMig div{  
+        order: 2;
+    }
+
+    address div p:first-child{
+        font-size: 8vw;
+        padding-bottom: 1vw;
+    }
+
+    .socialNetwork a{
+        font-size: 3em !important;  
+    }
+    .btnBook{
+        margin: 0 auto;
+    }
+ */
+}
+
+
+/* ******************Hamnurger menu**************************************** */
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+
+
+ #menuToggle
+ {
+   display: block;
+   position: relative;
+   top: 50px;
+   left: 50px;
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #c4c1c1;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: tomato;
+ }
+ 
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #cdcdcd;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #cdcdcd;
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: absolute;
+   width: 100vw;
+   margin: -100px 0 0 -50px;
+   /* padding: 50px; */
+   padding-top: 30px;
+   
+   background: rgba(43, 41, 41, 0.527);
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ 
+ #menu li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+ }
+ 
+ /*
+  * And let's slide it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
